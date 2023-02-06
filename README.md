@@ -1,5 +1,12 @@
 # servmgmt-ws22
 
+In this project, I learned how to 
+- Manage services: **Docker**
+- Configure a NDP proxy daemon: **ndppd** for IPv6
+- Inspect containers: **netshoot**
+- Serve web-content: **nginx**
+- Host websites: **cloudflare**
+- Orchestrate docker containers: **Kubernetes**
 
 ## Techstack
 
@@ -28,7 +35,10 @@
 
 
 ### `portainer`
-    Deploy, configure, troubleshoot remote docker deamons.
+    Deploy, configure, troubleshoot remote docker deamons. (didn't rly use)
+    
+### Kubernetes
+    Container orchestration system
     
  ---
 ## Getting started

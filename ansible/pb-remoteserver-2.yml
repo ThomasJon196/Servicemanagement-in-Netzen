@@ -1,0 +1,5 @@
+- name: Update apt-packgage on remote server vm
+  hosts: vm
+  roles:
+    - basics
+  become: yes

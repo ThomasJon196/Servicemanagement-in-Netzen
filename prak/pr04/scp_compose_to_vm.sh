@@ -1,0 +1,1 @@
+scp docker-compose.yml tjonas2s@2001:638:408:200:FF38::1~

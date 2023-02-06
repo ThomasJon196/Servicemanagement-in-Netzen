@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+    name: miniwhoami-rs
+spec:
+    replicas: 5
+    selector:
+        matchLabels:
+            app: miniwhoami
+    template:
+        metadata:
+            labels:
+                app: miniwhoami
+        spec:
+            containers:
+            - image: docker.fslab.de/tjonas2s/servmgmt-ws22/miniwhoami:latest
+              name: miniwhoami
+              ports:
+              - containerPort: 80
+                protocol: TCP
+              imagePullPolicy: IfNotPresent

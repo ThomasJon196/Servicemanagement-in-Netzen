@@ -1,0 +1,48 @@
+---
+# tasks file for docker-ce
+
+- name: Install for aptitude
+  ansible.builtin.apt:
+    name: aptitude
+    update_cache: true
+  become: true
+
+- name: Set Repo
+  ansible.builtin.apt:
+    name:
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+    update_cache: true
+  become: true
+
+- name: Add Docker GPG apt Key
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  become: true
+
+- name: Add Docker Repository
+  ansible.builtin.apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+  become: true
+
+- name: Install docker
+  ansible.builtin.apt:
+    name:
+      - docker-ce
+      - docker-compose
+  become: true
+
+- name: Adding user tjonas2s
+  user: name=tjonas2s
+    groups=docker
+    append=yes
+  become: true
+
+
+
+
+# Code taken from https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-20-04

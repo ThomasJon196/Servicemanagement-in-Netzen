@@ -1,0 +1,4 @@
+- name: ping remote server vm
+  hosts: vm
+  roles:
+    - conn-check

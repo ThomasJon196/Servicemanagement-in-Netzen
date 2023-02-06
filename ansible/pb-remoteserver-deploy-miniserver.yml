@@ -1,0 +1,14 @@
+- name: Deploy miniserver
+  hosts: vm
+
+  vars_prompt:
+    - name: vm_key
+      prompt: Enter VM Key
+
+  tasks:
+    - name: Include secrets
+      include_vars: secret.yml
+
+  roles:
+    - role: deploy-miniserver
+      vm_key: {{ vm_key }}

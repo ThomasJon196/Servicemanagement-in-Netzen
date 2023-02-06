@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  miniwhoami_20412:
+    image: docker.fslab.de/tjonas2s/servmgmt-ws22/miniwhoami
+    ports:
+      - "20412:5000"
+
+  miniwhoami_20413:
+    image: docker.fslab.de/tjonas2s/servmgmt-ws22/miniwhoami
+    ports:
+      - "20413:5000"
+
+networks:
+  default:
+    name: mynetwork
+    external: true

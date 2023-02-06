@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: miniwhoami-manual
+spec:
+  containers:
+  - image: docker.fslab.de/tjonas2s/servmgmt-ws22/miniwhoami:latest
+    name: miniwhoami
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    imagePullPolicy: IfNotPresent

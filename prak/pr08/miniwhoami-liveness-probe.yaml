@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: miniwhoami-liveness-probe
+spec:
+  containers:
+  - image: docker.fslab.de/tjonas2s/servmgmt-ws22/miniwhoami-crash:v1
+    name: miniwhoami-crash
+    livenessProbe:
+        httpGet:
+            path: / 
+            port: 80

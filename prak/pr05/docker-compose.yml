@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  reverse-proxy:
+    container_name: reverse-proxy
+    image: nginx:latest
+    networks:
+      my_ipv6:
+        ipv6_address: 2001:638:408:200:ff38:cafe::7777
+      loc_ipv6:
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./site-content:/usr/share/nginx/html
+      #- ./access.log:/var/log/nginx/access.log
+
+    environment:
+      - ENABLE_IPV6=true
+    restart: unless-stopped
+
+networks:
+  my_ipv6:
+    external: true
+  loc_ipv6:
+    external: true

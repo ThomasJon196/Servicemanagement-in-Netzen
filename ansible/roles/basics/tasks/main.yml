@@ -1,0 +1,5 @@
+---
+# tasks file for basics
+- name: Install packages
+  ansible.builtin.apt:
+    update_cache: yes

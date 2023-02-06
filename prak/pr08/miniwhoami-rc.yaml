@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+    name: miniwhoami-rc
+spec:
+    replicas: 3
+    selector:
+        # app: miniwhoami
+        app2: neu
+    template:
+        metadata:
+            labels:
+                app: miniwhoami
+                app2: neu
+        spec:
+            containers:
+            - image: docker.fslab.de/tjonas2s/servmgmt-ws22/miniwhoami:latest
+              name: miniwhoami
+              ports:
+              - containerPort: 80
+                protocol: TCP
+              imagePullPolicy: IfNotPresent

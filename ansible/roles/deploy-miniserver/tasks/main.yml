@@ -1,0 +1,10 @@
+---
+# tasks file for deploy-miniserver
+- name: Log into gitlab registry
+  ansible.builtin.command: docker login docker.fslab.de -u tjonas2s -p {{ vm_key }}
+
+- name: Deploy and run miniserver from registry
+  ansible.builtin.command: docker run -p 20411:5000 docker.fslab.de/tjonas2s/servmgmt-ws22/miniwhoami
+
+- name: Log into gitlab registry
+  ansible.builtin.command: docker logout

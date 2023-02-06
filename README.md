@@ -3,11 +3,6 @@
 
 ## Techstack
 
-
-### `portainer`
-    Deploy, configure, troubleshoot remote docker deamons.
-    
-
 ### `Docker`
     Run containerized applications
 
@@ -30,6 +25,11 @@
 
 
 ### `Cloudflare`
+
+
+### `portainer`
+    Deploy, configure, troubleshoot remote docker deamons.
+    
  ---
 ## Getting started
 

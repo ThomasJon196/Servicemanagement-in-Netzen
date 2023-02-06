@@ -2,6 +2,7 @@
 
 In this project, I learned how to 
 - Manage services: **Docker**
+- Configure Hosts: **Ansible**
 - Configure a NDP proxy daemon: **ndppd** for IPv6
 - Inspect containers: **netshoot**
 - Serve web-content: **nginx**
